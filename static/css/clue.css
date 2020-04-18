@@ -1,0 +1,11 @@
+.clue-outer {
+    color: white;
+    padding: 60px 20px 20px 20px;
+    text-align: center;
+}
+.answer-input {
+    margin-top: 20px;
+}
+.clue-content {
+    font-size: 1.1rem;
+}

@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Other Half | Technex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta  name="theme-color" content="#031322">
+        <meta name="msaplication-navbutton-color" content="#031322">
+        <meta name="apple-mobile-web-app-status-bar-color" content="#031322">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/form.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="technex-header">
+            <img src="{% static 'images/technex4.png' %}">
+        </div>
+        <div class="progress-bar-outer">
+            <div class="progress">
+                <div class="progress-bar" id="pbar" style="width: calc( (1/30)*100% );">
+                     
+                </div>
+            </div>
+        </div>
+        <div class="alert alert-danger fade show" role="alert" id="noentrytext">
+            Answer the question first.
+        </div>
+        <div class="timer-outer" id="timer-outer">
+            <div class="progress">
+                <div class="progress-bar" id="timer" style="width: 100%;">
+
+                </div>
+            </div>
+        </div>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for question in questions %}
+                <div class="outer-container" id="{{ question.qid }}">
+                    <div class="question-no">
+                        <!-- <span class="span-no">Question {{question.qno}}</span><span class="span-total">/{{total}}</span>
+                        <hr> -->
+                        
+                        <!-- <div class="question-no-circle-outer">
+                            <div class="question-no-circle-inside">
+                                {{question.qno}}
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="question">
+                        <div>
+                            {{question.qno}}. {{ question.label }}
+                        </div>
+                    </div>
+                    <div class="options">
+                        {% if question.option1 %}
+                            <div class="inputGroup">
+                                <input id="{{question.qid}}{{question.option1}}" name="{{question.qid}}" type="radio" value="1"/>
+                                <label for="{{question.qid}}{{question.option1}}">{{question.option1}}</label>
+                            </div>
+                        {% endif %}
+                        {% if question.option2 %}
+                            <div class="inputGroup">
+                                <input id="{{question.qid}}{{question.option2}}" name="{{question.qid}}" type="radio" value="2"/>
+                                <label for="{{question.qid}}{{question.option2}}">{{question.option2}}</label>
+                            </div> 
+                        {% endif %}
+                        {% if question.option3 %}
+                            <div class="inputGroup">
+                                <input id="{{question.qid}}{{question.option3}}" name="{{question.qid}}" type="radio" value="3"/>
+                                <label for="{{question.qid}}{{question.option3}}">{{question.option3}}</label>
+                            </div>
+                        {% endif %}
+                        {% if question.option4 %}
+                            <div class="inputGroup">
+                                <input id="{{question.qid}}{{question.option4}}" name="{{question.qid}}" type="radio" value="4"/>
+                                <label for="{{question.qid}}{{question.option4}}">{{question.option4}}</label>
+                            </div> 
+                        {% endif %}
+                        {% if question.option5 %}
+                            <div class="inputGroup">
+                                <input id="{{question.qid}}{{question.option5}}" name="{{question.qid}}" type="radio" value="5"/>
+                                <label for="{{question.qid}}{{question.option5}}">{{question.option5}}</label>
+                            </div> 
+                        {% endif %}              
+                    </div>
+                    {% if question.question_first %}
+                        <div class="next-button">
+                            <a class="btn btn-custom-next" id="{{question.qid}}but">Next</a>
+                        </div>
+                        <!--------------------------------------------------------------------------------------------------------->
+                        <!-- <div class="next-button">
+                            <a class="btn btn-custom-next" id="custom14button">Custom Button</a>
+                        </div> -->
+                        <!--------------------------------------------------------------------------------------------------------->
+                    {% else %}
+                        {% if question.question_last %}
+                            <div class="next-button">
+                                <input type="submit" class="btn btn-success" value="Submit">
+                            </div>
+                        {% else %}
+                            <div class="next-button">
+                                <a class="btn btn-custom-prev" id="{{question.qid}}butprev">Previous</a>
+                                <a class="btn btn-custom-next" id="{{question.qid}}but">Next</a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            {% for question in rpquestions %}
+                <div class="outer-container" id="{{question.qid}}">
+                    <!-- <div class="question-no">
+                        <span class="span-no">Question {{question.qno}}</span><span class="span-total">/{{total}}</span>
+                        <hr>
+                    </div> -->
+                    <div class="question">
+                        <div class="pickone-container">
+                            [ Pick one ]
+                        </div>
+                    </div>
+                    <div class="options">
+                        <!-- {% if question.option1image %}
+                                    <div class="choice-option-container">
+                                        <div class="choice-option choice-option1 choice-option-img">
+                                            <img src="{{question.option1image.url}}">
+                                        </div>
+                                        <div class="choice-option choice-option2 choice-option-img">
+                                            <img src="{{question.option2image.url}}">
+                                        </div>
+                                    </div>
+                        {% endif %} -->
+                        <div class="choice-option-container">
+                            <div class="choice-option choice-option1">
+                                <input type="radio" id="{{question.qid}}{{question.option1}}" name="{{question.qid}}" value="1">
+                                <label for="{{question.qid}}{{question.option1}}">
+                                    {% if question.option1image %}
+                                        <div class="choice-option-img">
+                                            <img src="{% static question.option1image.url %}">
+                                        </div>
+                                    {% endif %}
+                                <h5>{{question.option1}}</h5>
+                                </label>
+                            </div>
+                            <div class="choice-option choice-option2">
+                                <input type="radio" id="{{question.qid}}{{question.option2}}" name="{{question.qid}}" value="2">
+                                <label for="{{question.qid}}{{question.option2}}">
+                                    {% if question.option1image %}
+                                        <div class="choice-option-img">
+                                            <img src="{% static question.option2image.url %}">
+                                        </div>
+                                    {% endif %}
+                                <h5>{{question.option2}}</h5>
+                                </label>
+                            </div>
+                            <div class="choice-option choice-option3">
+                                <input type="radio" id="{{question.qid}}{{question.option3}}" name="{{question.qid}}" value="3" checked>
+                                <label for="{{question.qid}}{{question.option3}}">
+                                <h5>NET</h5>
+                                </label>
+                            </div>
+                        </div>           
+                    </div>
+                    {% if question.question_first %}
+                        <!-- <div class="next-button">
+                            <a class="btn btn-custom-next" id="{{question.qid}}but">Next</a>
+                        </div> -->
+                    {% else %}
+                        {% if question.question_last %}
+                            <div class="next-button">
+                                <input type="submit" class="btn btn-submit" id="submit-button" value="Submit">
+                            </div>
+                        {% else %}
+                            <!-- <div class="next-button">
+                                <a class="btn btn-custom-prev" id="{{question.qid}}butprev">Previous</a>
+                                <a class="btn btn-custom-next" id="{{question.qid}}but">Next</a>
+                            </div> -->
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </form>
+
+
+    <script src="{% static 'js/form.js' %}">
+        
+    </script>    
+    <script src="{% static 'js/timer.js' %}">
+
+    </script>
+    </body>
+</html>
+
+
+
+
+
+<!-- 
+    <div class="outer-container" id="ques1">
+            <div class="question-no">
+                <span class="span-no">Question 1</span><span class="span-total">/10</span>
+                <hr>
+            </div>
+            <div class="question">
+                <div>
+                    Which programming language do you prefer?
+                </div>
+            </div>
+            <div class="options">
+                <div class="choice-option-container">
+                    <div class="choice-option choice-option1">
+                        <input type="radio" id="control_01" name="mic-gog" value="1">
+                        <label for="control_01">
+                        <h5>Microsoft</h5>
+                        </label>
+                    </div>
+                    <div class="choice-option choice-option2">
+                        <input type="radio" id="control_02" name="mic-gog" value="2">
+                        <label for="control_02">
+                        <h5>Google</h5>
+                        </label>
+                    </div>
+                    <div class="choice-option choice-option3">
+                        <input type="radio" id="control_100" name="mic-gog" value="2" checked>
+                        <label for="control_100">
+                        <h5>NET</h5>
+                        </label>
+                    </div>
+                </div>           
+            </div>
+
+            <div class="next-button">
+                <a class="btn btn-custom" id="ques1but">Next</a>
+            </div>
+        </div>
+ -->

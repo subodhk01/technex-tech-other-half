@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Other Half | Technex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta  name="theme-color" content="#031322">
+        <meta name="msaplication-navbutton-color" content="#031322">
+        <meta name="apple-mobile-web-app-status-bar-color" content="#031322">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <div class="outer-container">
+            <div>
+                <div class="tandc-heading">
+                    We thought you should know these things before proceeding
+                </div>
+                <div class="tandc-content">
+                    <ol>
+                        <li>
+                            This is a fun event only for the participants of Technex'20.
+                        </li>
+                        <li>
+                            You should not engage in any conduct which is unlawful or which may cause inconvenience to any person.
+                        </li>
+                        <li>
+                            TECHNEX does not take any responsibility to get you matched with your partner. We don't guarantee match.
+                             Matches are completely based on your preferences and number of available participants.
+                        </li>
+                        <li>
+                            You will be eligible for onsite round only if you get a match and you and your match are present on site.
+                        </li>
+                    </ol>
+                    <div>
+                        We want our participants to be able express themselves as much as possible
+                         but we have to impose restrictions on certain actions which:
+                    </div>
+                    <ol>
+                        <li>
+                            contains language or imagery which could be deemed offensive or is likely
+                             to harass, upset, embarrass, alarm or annoy any other person
+                        </li>
+                        <li>
+                            is abusive, insulting or threatening, discriminatory or which promotes or encourages racism, sexism, hatred or bigotry
+                        </li>
+                        <li>
+                            encourages any illegal activity
+                        </li>
+                    </ol>
+                    <div style="font-weight: 800;">
+                        <b>
+                            We operate a zero-tolerance policy for any misconduct. Participants will face serious charges if found guilty.
+                        </b>
+                    </div>
+                    <div class="submit-button-container">
+                        <a href="../form/{{techid}}" class="btn btn-submit">Lets go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

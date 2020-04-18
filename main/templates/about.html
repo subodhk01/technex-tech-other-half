@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Other Half | Technex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta  name="theme-color" content="#031322">
+        <meta name="msaplication-navbutton-color" content="#031322">
+        <meta name="apple-mobile-web-app-status-bar-color" content="#031322">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="mobile-header">
+                <img src="{% static 'images/technex4.png' %}">
+            </div>
+            <div>
+                <div class="about-heading">
+                    TECH OTHER HALF
+                </div>
+                <div class="about-content">
+                    Tech Other Half is a fun event to be held during Technex'20: 14th - 16th feb. You will answer a series of questions and we will find
+                    an event partner for you. On arriving at the venue, a fun event will be conducted.<br><br>
+                    <span>The winners of this event will get VIP entry to Jubin Nautiyal's concert. There will be plenty of goodies as well.</span>
+                    <div class="submit-button-container">
+                        <a href="../tandc/{{techid}}" class="btn btn-submit">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

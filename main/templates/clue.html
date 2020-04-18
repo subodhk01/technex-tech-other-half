@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Other Half | Technex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta  name="theme-color" content="#031322">
+        <meta name="msaplication-navbutton-color" content="#031322">
+        <meta name="apple-mobile-web-app-status-bar-color" content="#031322">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/clue.css' %}">
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <div class="outer-container">
+            <div class="mobile-header">
+                <img src="{% static 'images/technex4.png' %}">
+            </div>
+            <div>
+                <div class="clue-outer">
+                    {% for clue in clues %}
+                        {% if clue.state %}
+                            <div class="clue-content">
+                                {{clue.label}}
+                            </div> <br>
+                            {% if clue.form %}
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <input class="form-control" name="clueid" value="{{clue.id}}" style="display: none;">
+                                    <input class="form-control answer-input" name="user_answer" placeholder="Enter your answer here"><br>
+                                    <input class="btn btn-custom" type="submit">
+                                </form>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

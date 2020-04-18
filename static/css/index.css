@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans|Raleway:400,800&display=swap');
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ }
+
+html {
+     width: 100vw;
+     overflow: hidden;
+}
+body {
+    width: 100%;
+    overflow: hidden;
+}
+.outer-container {
+    width: 100%;
+    background: #cc2b5e; 
+    background: -webkit-linear-gradient(to right, #cc2b5e, #753a88); 
+    background: linear-gradient(to right, #cc2b5e, #753a88); 
+    background-image: url('../images/landing-back2.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.mobile-header {
+    display: none;
+}
+.left-section .left-heading div {
+    font-family: 'Bungee Shade';
+    color: white;
+    font-size: 6.3vw;
+    line-height: 6.4vw;
+    animation: bounce 2.5s linear infinite;
+}
+.left-section .left-content p {
+    font-family: 'Poiret One';
+    font-size: 2vw;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0px 0px 10px white;
+}
+.left-section {
+    align-items: center;
+    margin-top: 24vh;
+    padding-left: 3vw;
+    text-align: center;
+}
+@media (max-width: 1240px) {
+    .left-section{
+        margin-top: 16vh !important;
+    }
+}
+@media (max-width: 900px){
+    body{
+        background-size: auto;
+    }
+}
+@media (max-width: 765px){
+    .right-section{
+        display: none;
+    }
+    .left-section .left-heading div{
+        font-size: 17vw;
+        line-height: 18vw;
+    }
+    .left-content {
+        margin-left: 13px;
+        text-align: center;
+    }
+    .left-section .left-content p {
+        font-size: 6vw;
+    }
+    .btn-custom{
+        font-size: 6vw !important;
+    }
+    .mobile-header{
+        width: 100%;
+        display: block;
+        padding-left: 7px;
+    }
+    .mobile-header img {
+        width: 100%;
+    }
+}
+.right-section {
+    text-align: center;
+}
+.right-section .right-content img {
+    width: 50%;
+    margin-top: 18vh;
+    padding-right: 3vw;;
+}
+.right-content-image2 img {
+    margin-top: 10px !important;
+    width: 60% !important;
+}
+
+.btn-custom {
+    border-radius: 10px;
+    color: white;
+    border: 0;
+    padding: 10px 30px !important;
+    font-size: 2vw;
+    font-family: 'Kelly Slab';
+    background: #cc2b5e; 
+    background: -webkit-linear-gradient(to right, #cc2b5e, #753a88);
+    background: linear-gradient(to right, #cc2b5e, #753a88); 
+    transition: 0.2s !important;
+    text-shadow: 0px 0px 10px grey;
+}
+.btn-custom:hover {
+    color: white;
+    background: #cc2b5e; 
+    background: -webkit-linear-gradient(to right,#cc2b5e, #cc2b5e, #753a88);
+    background: linear-gradient(to right,#cc2b5e, #cc2b5e, #753a88); 
+    box-shadow: 0px 3px 5px 0px rgb(95, 69, 97);
+    transform: translate(0, -5px);
+}
+
+.left-section .left-heading div:hover .left-section .left-content p{
+    border-bottom: 1px solid red;
+}
+
+.form-already-submitted{
+    padding: 30px;
+    position: relative;
+    margin: auto;
+    top: 30vh;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.tandc-heading {
+    font-size: 2rem;
+    font-family: 'Odibee Sans', cursive;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    height: 20vh;
+}
+.tandc-content {
+    padding: 0px 30px 100px 30px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 0.9rem;
+    overflow: scroll;
+    height: 80vh;
+}
+.about-heading {
+    font-size: 8vw;
+    font-family: 'Bungee Shade', cursive;
+    color: white;
+    text-align: center;
+    padding: 50px 0px;
+    height: 20vh;
+}
+.about-content {
+    padding: 0px 30px 100px 30px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 1.1rem;
+    overflow: scroll;
+    height: 80vh;
+}
+.about-content span {
+    font-weight: 800;
+}
+.tandc-content ol{
+    padding-inline-start: 30px;
+}
+.submit-button-container {
+    text-align: center;
+    padding-top: 20px;
+}
+.btn-submit {
+    background: linear-gradient(45deg, #380d61, rgb(182, 12, 12));
+    padding: 15px 30px;
+    border-radius: 30px;
+    color: white;
+    border: 0;
+    font-size: 1.2rem;
+    font-family: 'Kelly Slab';
+  }

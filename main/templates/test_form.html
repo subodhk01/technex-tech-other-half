@@ -1,0 +1,19 @@
+<form method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input name="name" type="text">
+    <label>Age:</label>
+    <input name="age" type="number">
+    <label>Gender:</label>
+    <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+    <label>Radio1:</label>
+    <input type="radio" name="hello" value="radio1">
+    <label>Radio2:</label>
+    <input type="radio" name="hello" value="radio2">
+    <label>Radio3:</label>
+    <input type="radio" name="hello" value="radio3">
+    <input type="submit" value="Submit">
+</form>

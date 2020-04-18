@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Other Half | Technex</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/form.css' %}">
+        <link rel="stylesheet" href="{% static 'css/effects.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="outer-container" id="ques1">
+                {% if msg %}
+                    <div class="alert alert-danger">
+                        {{msg}}
+                    </div>
+                {% endif %}
+                <div class="question-no">
+                    <span class="span-no">Technex Tech Other Half</span><span class="span-total"></span>
+                    <hr>
+                </div>
+                <div class="question">
+                    <div>
+                        Enter your Technex ID
+                    </div>
+                </div>
+                <div class="options">
+                    <div class="choice-option-container">
+                        <!-- <input class="form-control" name="technexid" type="text"> -->
+                        <input class="effect-8 form-control" type="text" placeholder="Technex ID" name="technexid" required>
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
+                    </div>           
+                </div>
+
+                <div class="next-button">
+                    <input type="submit" class="btn btn-custom-next" value="Next">
+                </div>
+            </div>
+        </form>
+
+    </body>
+</html>

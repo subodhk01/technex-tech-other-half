@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans|Raleway:400,800&display=swap');
+
+@keyframes bounce2 {
+    0%{
+        transform: translateY(-10px) rotate(0);
+    }
+    8%{
+        transform: translateY(-40px) rotate(40deg);
+    }
+    15%{
+        transform: translateY(-70px) rotate(80deg);
+    }
+    20%{
+        transform: translateY(-80px) rotate(150deg);
+    }
+    28%{
+        transform: translateY(-100px) rotate(210deg);
+    }
+    35%{
+        transform: translateY(-100px) rotate(270deg);
+    }
+    40%{
+        transform: translateY(-85px) rotate(320deg);
+    }
+    50%{
+        transform: translateY(-40px) rotate(350deg);
+    }
+ }
+
+.moon-container {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow: hidden;
+}
+.moon-container img {
+    width: 100%;
+    transform: scale(1.3) translateY(20px);
+}
+.astronaut-outer {
+    position: absolute;
+    bottom: 26vh;
+    width: 100%;
+    text-align: center;
+}
+.astronaut-outer img {
+    width: 50%;
+    margin-left: 30px;
+    transform: rotateX('100deg');
+    animation: bounce2 20s infinite;
+}
+.end-heading {
+    text-align: center;
+    color: white;
+    font-family: 'Odibee Sans';
+    padding: 20px 0px;
+    font-size: 10vw;
+}
+.end-content {
+    text-align: center;
+    font-family: 'Poiret One';
+    font-size: 7vw;
+    color: white;
+}
+.end-content div {
+    font-family: 'Bungee Shade';
+    margin-top: 10px;
+}

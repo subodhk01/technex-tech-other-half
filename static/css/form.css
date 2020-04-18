@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kelly+Slab&display=swap');
+
+body {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+/* @media (min-height: 768px){
+    body{
+        overflow: hidden;
+        background: linear-gradient(to bottom, #010e18, #031322, #031322);
+        height: 100vh;
+        width: 100vw;
+    }
+    html{
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+    .outer-container {
+        padding: 40px;
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    .question-no{
+        position: relative;;
+        top: 30px;
+        width: 100%;
+    }
+    .question {
+        position: relative;
+        top: 40px;
+        font-size: 1.2rem;
+        color: white;
+    }
+    .question-no hr {
+        border-top: 1px solid rgb(156, 156, 156);
+    }
+    .question-no .span-no {
+        font-size: 1.6rem;
+        color: rgb(168, 167, 167);
+    }
+    .question-no .span-total {
+        font-size: 1.4rem;
+        color: rgb(75, 73, 73);
+    }
+    .options{
+        position: relative;
+        top: 70px;
+    }
+    .next-button{
+        text-align: center;
+        position: relative;
+        top: 100px;
+    }
+} */
+
+body{
+    overflow: hidden;
+    background: linear-gradient(45deg, #120933, #031322, #082541);
+    height: 100vh;
+    width: 100vw;
+}
+html{
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+.technex-header {
+  text-align: center;
+  position: static;
+  padding-left: 7px;
+}
+.technex-header img {
+  width: 100%;
+  max-width: 400px;
+}
+.outer-container {
+    padding: 110px 30px 30px 30px;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: none;
+}
+#ques1 {
+  display: block;
+}
+.question-no{
+    position: relative;;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+#noentrytext{
+  display: none;
+  margin: 6px 10px;
+  z-index: 10;
+}
+.question-no-circle-outer {
+}
+.question-no-circle-inside {
+  border: 1px solid white;
+  border-radius: 50px;
+}
+.progress-bar-outer {
+  padding: 0px 40px;
+    position: relative;
+    top: 20px;
+}
+.progress-bar-outer .progress .progress-bar {
+  background: linear-gradient(to right, #5562eb, red);
+  background: rgb(65, 158, 201);
+  transition: all 0.7s;
+}
+.progress-bar-outer .progress {
+  height: 3px;
+}
+.question {
+    position: relative;
+    top: 40px;
+    font-size: 1.2rem;
+    color: white;
+}
+.question-no hr {
+    border-top: 2px solid rgb(156, 156, 156);
+    border-radius: 10px;
+}
+.question-no .span-no {
+    font-size: 1.6rem;
+    color: rgb(202, 199, 199);
+}
+.question-no .span-total {
+    font-size: 1.2rem;
+    color: rgb(110, 108, 108);
+}
+.options{
+    position: relative;
+    top: 70px;
+}
+.next-button{
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+.btn-custom-next {
+    padding: 13px 35px;
+    color: white;
+    border-radius: 70px;
+    background-color: rgb(36, 85, 175);
+    border: 1px solid rgb(36, 85, 175);
+    transition: 0.3s;
+}
+.btn-custom-next:hover {
+    background-color: transparent;
+    color: white;
+}
+.btn-custom-next:active {
+    background-color: transparent;
+    color: white;
+}
+
+.btn-custom-prev {
+  padding: 13px 35px;
+  border-radius: 70px;
+  color: rgb(36, 85, 175);
+  border: 1px solid rgb(36, 85, 175);
+  transition: 0.3s;
+}
+.btn-custom-prev:hover {
+  background-color: transparent;
+  color: white;
+}
+.btn-custom-prev:active {
+  background-color: transparent;
+  color: white;
+}
+
+#timer-outer {
+  display: none;
+}
+.timer-outer {
+  position: relative;
+  top: 40px;
+  padding: 0px 40px;
+}
+.timer-outer .progress .progress-bar {
+  background: linear-gradient(to right, #5562eb, red);
+  transition: 0.1s all;
+}
+
+@media (max-width: 400px){
+  .question {
+    font-size: 1rem;
+    top: 27px;
+  }
+  .options {
+    top: 40px;
+    font-size: 0.8rem;
+  }
+  .next-button{
+    top: 50px;
+  }
+  .btn-custom-next, .btn-custom-prev {
+    font-size: 0.7rem;
+  }
+  #timer-outer {
+    position: relative;
+    top: 30px;
+  }
+}
+
+
+.choice-option-container{
+    margin-top: 25px;
+}
+.choice-option {
+    width: 49%;
+    display: inline-block;
+    vertical-align: text-top;
+}
+.choice-option3 {
+  display: none;
+}
+.choice-option img {
+  width: 130px;
+  max-width: 90%;
+  border-radius: 7px;
+}
+.choice-option-img {
+  padding: 20px 0px;
+  text-align: center;
+}
+.btn-submit {
+  background: linear-gradient(45deg, #5562eb, red);
+  padding: 20px 40px;
+  border-radius: 30px;
+  color: white;
+  border: 0;
+}
+.pickone-container {
+  text-align: center;
+  font-family: 'Kelly Slab';
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+
+
+
+.choice-option input[type=radio] {
+  display: none;
+}
+.choice-option input[type=radio]:not(:disabled) ~ label {
+  cursor: pointer;
+}
+.choice-option input[type=radio]:disabled ~ label {
+  color: rgb(46, 65, 128);
+  border-color: #bcc2bf;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.choice-option label {
+  color: rgb(46, 65, 128);
+  color: white;
+  height: 100%;
+  display: block;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 50px 0px;
+  margin-bottom: 1rem;
+  text-align: center;
+  box-shadow: 0px 3px 10px -2px rgba(161, 170, 166, 0.5);
+  position: relative;
+  font-size: 100%;
+}
+
+.choice-option input[type=radio]:checked + label {
+  background: linear-gradient(45deg, #5562eb, red);
+  color: white;
+  box-shadow: 0px 0px 10px rgba(27, 76, 150, 0.75);
+}
+.choice-option input[type=radio]:checked + label::after {
+  color: #3d3f43;
+  font-family: FontAwesome;
+  border: 2px solid white;
+  content: "\f00c";
+  font-size: 12px;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.25);
+}
+
+.choice-option input[type=radio]#control_05:checked + label {
+  background: red;
+  border-color: red;
+}
+.choice-option h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+.choice-option h5 {
+  font-size: 3.8vw;
+}
+
+
+/* @media only screen and (max-width: 700px) {
+  section {
+    flex-direction: column;
+  }
+} */
+
+#ques30Tinder ~ label{
+  pointer-events: none;
+}
+
+
+
+
+
+.inputGroup {
+    background-color: transparent;
+    border: 1px solid rgb(46, 65, 128);
+    display: block;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 10px;
+  }
+  .inputGroup label {
+      border-radius: 10px;
+    padding: 12px 30px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: rgb(198, 215, 228);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+    margin: 0 !important;
+  }
+  .inputGroup label:before {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    content: "";
+    background: linear-gradient(to right, #5562eb,#5562eb, red, red);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: -1;
+  }
+  .inputGroup label:after {
+    width: 32px;
+    height: 32px;
+    content: "";
+    border: 2px solid #D1D7DC;
+    
+       background-repeat: no-repeat;
+    background-position: 2px 3px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+  }
+  .inputGroup input:checked ~ label {
+    color: #fff;
+  }
+  .inputGroup input:checked ~ label:before {
+    transform: translate(-50%, -50%) scale3d(256, 256, 1);
+    opacity: 1;
+  }
+  .inputGroup input:checked ~ label:after {
+    background-color: rgb(44, 45, 139);
+    border-color: rgb(255, 255, 255);
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  }
+  .inputGroup input {
+    width: 32px;
+    height: 32px;
+    order: 1;
+    z-index: 2;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    visibility: hidden;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  
